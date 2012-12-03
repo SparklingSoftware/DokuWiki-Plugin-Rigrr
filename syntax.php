@@ -1,10 +1,8 @@
 <?php
 /**
-    * Plugin Now: Inserts a timestamp.
-    * 
-    * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
-    * @author     Christopher Smith <chris@jalakai.co.uk>
-    */
+ * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author     Stephan Dekker <Stephan@SparklingSoftware.com.au>
+*/
      
 // must be run within DokuWiki
 if(!defined('DOKU_INC')) die();
@@ -19,9 +17,9 @@ require_once DOKU_PLUGIN.'syntax.php';
 class syntax_plugin_rigrr extends DokuWiki_Syntax_Plugin {
      
     function getInfo() {
-        return array('author' => 'me',
-                        'email'  => 'me@someplace.com',
-                        'date'   => '2005-07-28',
+        return array('author' => 'Stephan Dekker',
+                        'email'  => 'Stephan@SparklingSoftware.com.au',
+                        'date'   => '2012-12-03',
                         'name'   => 'rigrr',
                         'desc'   => 'allows BPML to be rendered',
                         'url'    => 'http://www.dokuwiki.org/plugin:rigrr');

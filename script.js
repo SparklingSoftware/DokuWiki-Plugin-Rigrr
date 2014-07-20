@@ -8,6 +8,13 @@ function runRigrr() {
     try {
         var lib = new com.rapilabs.Rigrr('rigrr_canvas');
         lib.drawDiagram("rigrr_canvas", BPMN);
+
+
+        $("#rigrr_canvas").find("svg").attr('id', 'rigrr_svg');
+        svgPanZoom('#rigrr_svg', {
+            zoomEnabled: true,
+            controlIconsEnabled: true
+        });
     }
     catch (err) {
         txt = "There was an error on this page.\n\n";

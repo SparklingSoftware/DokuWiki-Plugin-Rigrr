@@ -16,23 +16,17 @@ class action_plugin_rigrr_javascript extends DokuWiki_Action_Plugin {
 
     function rigrr_javascript()
     {
-        $scripts = DOKU_URL.'lib/plugins/rigrr/lib/rigrr/rigrr.nocache.js';
-        $script = '<script src="'.$rigrr.'" ></script>';
-        $scripts = DOKU_URL.'lib/plugins/rigrr/lib/svg-pan-zoom/svg-pan-zoom.js';
-        $script = '<script src="'.$rigrr.'" ></script>';
+        $rigrr_script = DOKU_URL.'lib/plugins/rigrr/lib/rigrr/rigrr.nocache.js';
+        $script = '<script src="'.$rigrr_script.'" ></script>';
+        $svg_pan_script = DOKU_URL.'lib/plugins/rigrr/lib/svg-pan-zoom/svg-pan-zoom.js';
+        $script .= '<script src="'.$svg_pan_script.'" ></script>';
         
         return $script;
     }
     
 	function _hook_header(&$event, $param) {
-		$data = $this->rigrr_javascript();
-        ptln($data);
-
-		//$event->data['script'][] = array(
-		//	'type' => 'text/javascript',
-		//	'charset' => 'utf-8',
-		//	'_data' => $data,
-		//);
+		$scripts = $this->rigrr_javascript();
+           ptln($scripts);
 	}
     
 }

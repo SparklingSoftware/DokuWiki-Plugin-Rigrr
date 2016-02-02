@@ -31,11 +31,11 @@ class syntax_plugin_rigrr extends DokuWiki_Syntax_Plugin {
     function connectTo($mode) {  $this->Lexer->addEntryPattern('<rigrr.*?>(?=.*?</rigrr>)',$mode,'plugin_rigrr'); }
     function postConnect() { $this->Lexer->addExitPattern('</rigrr>','plugin_rigrr'); }
      
-    function handle($match, $state, $pos, &$handler) {
+    function handle($match, $state, $pos, Doku_Handler $handler) {
         return array($match, $state, $pos);
     }
      
-    function render($mode, &$renderer, $data) {
+    function render($mode, Doku_Renderer $renderer, $data) {
     // $data is what the function handle return'ed.
         if($mode == 'xhtml'){
             list($match,$state,$pos) = $data;
